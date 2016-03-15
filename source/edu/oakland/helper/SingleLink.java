@@ -11,7 +11,30 @@ package edu.oakland.helper;
 */
 
 public class SingleLink {
+	
+	private SingleLink nextLink;
+	private Integer value;
+
 	public SingleLink(){
 	
 	}
+	public void setNext(SingleLink e){
+		this.nextLink = e;
+		return;
+	}
+	public void setValue(Integer n){
+		this.value = n;
+		return;
+	}
+	public void setValue(int i){
+		this.value = new Integer(i);
+		return;
+	}
+	public SingleLink getNext(){
+		return this.nextLink;
+	}
+	public Integer getValue(){
+		return this.value;
+	}
+
 }
