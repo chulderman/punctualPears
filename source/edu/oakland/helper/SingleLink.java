@@ -6,8 +6,8 @@ package edu.oakland.helper;
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0 - 160216
-*	@since version 1.0
+*	@version version 1.0.1
+*	@since version 1.0.0
 */
 
 public class SingleLink {
@@ -16,8 +16,26 @@ public class SingleLink {
 	private Integer value;
 
 	public SingleLink(){
-	
+		this.value = null;
+		this.nextLink = null;
 	}
+	public SingleLink(int i){
+		this.value = i;
+		this.nextLink = null;
+	}
+	public SingleLink(Integer n){
+		this.value = n;
+		this.nextLink = null;
+	}
+	public SingleLink(int i, SingleLink link){
+		this.value = i;
+		this.nextLink = link;
+	}
+	public SingleLink(Integer n, SingleLink link){
+		this.value = n;
+		this.nextLink = link;
+	}
+
 	public void setNext(SingleLink e){
 		this.nextLink = e;
 		return;
