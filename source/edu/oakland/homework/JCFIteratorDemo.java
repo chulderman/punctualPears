@@ -13,24 +13,23 @@ import java.util.*;
 *	@since version 1.0
 */
 public class JCFIteratorDemo {
-	public JCFIteratorDemo(){
-	
-	}
 	
 	private int[] arrayRef;
 	private ArrayList<Integer> arrayListRef;
-	private SingleLinkedList linkListRef;
+	private LinkedList<SingleLink> linkListRef;
 	
+	public JCFIteratorDemo(){
 	
+	}
 	
 	public static void main(String[] args) {
 			ArrayGen aGen = new ArrayGen();
 			arrayRef = aGen.createArray();
 			
-			ArrayListGen aListGen = new ArrayListGen();
+			ArrayListGen<Integer> aListGen = new ArrayListGen<Integer>();
 			arrayListRef = aListGen.createArrayList(arrayRef);
 			
-			LinkedListGen LLGen = new LinkedListGen();
+			LinkedListGen<Integer> LLGen = new LinkedListGen<Integer>();
 			linkListRef = LLGen.createSingleLinkedList(arrayListRef);
 			
 			//Next create an AL<integer> iterator and find
@@ -45,17 +44,12 @@ public class JCFIteratorDemo {
 			
 			//construct an iterator for a singleLinkedList 
 			//and find all even numbers
-			Iterator<SingleLinkedList> iter2 = linkListRef.iterator();
+			Iterator<SingleLink> iter2 = linkListRef.iterator();
 			while(iter2.hasNext()){
 				tmp = iter2.next().getValue();
 				if(tmp % 2 == 1)
 					System.out.println("Odd number found: " + tmp);
 			}
 			
-			
-			
-			
 	}
-	
-	
 }
