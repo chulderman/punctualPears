@@ -6,7 +6,7 @@ package edu.oakland.helper;
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0.2
+*	@version version 1.0.3
 *	@since version 1.0.0
 */
 
@@ -21,28 +21,54 @@ public class LinkedListGen{
 		this.currentLink = null;
 	}
 
+	/**
+	*	isEmpty() should only be empty for newly initialized lists.
+	*	
+	*	@return	true if the linked list is empty. 
+	*/
 	public boolean isEmpty(){
 		return (this.currentLink == null);
 	}
+
+	/**
+	*	insertLink() adds an Integer to the linked list.
+	*	
+	*	@param	n	Takes an Integer and adds it to the list. 
+	*/
 	public LinkedListIterator listIterator(){
 		LinkedListIterator iter = new LinkedListIterator(this.currentLink);
 		return iter;
 	}
+
+	/**
+	*	insertLink() adds an Integer to the linked list.
+	*	
+	*	@param	n	Takes an Integer and adds it to the list. 
+	*/
 	public void insertLink(Integer n) {
 		SingleLink newLink = new SingleLink(n);
 		newLink.setNext(currentLink);
 		this.currentLink = newLink;
 		return;
 	}	
+
+	/**
+	*	createList() coverts the ArrayListGen values to LinkedListGen values.
+	*	
+	*	@param	integerArray	Takes an ArrayListGen
+	*	@return	newList			Returns a LinkedListGen with the elements of the ArrayListGen
+	*/
 	public LinkedListGen createList(ArrayListGen integerArray){
 		LinkedListGen newList = new LinkedListGen();
-		ArrayListIterator iter = new newList.listIterator();
+		ArrayListIterator iter = new integerArray.listIterator();
+
 		while(iter.hasNext()){
 			newList.insertLink(iter.next());	
 		}
 		return newList;
 	}
 
+	
 	private class LinkedListIterator {
 		private SingleLink ref;
 
