@@ -1,12 +1,12 @@
 package edu.oakland.helper;
 
 /**
-*	This class is responsible for generating the LinkedList<SingleLink> from
-*	SinglLinks created by the SingleLink class;
+*	This class is responsible for generating the LinkedList<SingleLink> imlementation of
+*	SingleLinks including a list iterator for traversing.
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0.1
+*	@version version 1.0.2
 *	@since version 1.0.0
 */
 
@@ -42,6 +42,7 @@ public class LinkedListGen{
 
 	private class LinkedListIterator {
 		private SingleLink ref;
+
 		private LinkedListIterator(SingleLink link){
 			this.ref = link;
 		}
