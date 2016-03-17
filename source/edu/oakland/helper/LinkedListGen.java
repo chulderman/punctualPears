@@ -34,13 +34,13 @@ public class LinkedListGen{
 		this.currentLink = newLink;
 		return;
 	}	
-	public LinkedListGen createSingleLinkedList(ArrayList<Integer> integerArray){
+	public LinkedListGen createList(ArrayListGen integerArray){
 		LinkedListGen newList = new LinkedListGen();
-		// Fill linked list with the integer array
+		// Fill linked list with the integer array //
 		return newList;
 	}
 
-	private class LinkedListIterator extends ListIterator<SingleLink>{
+	private class LinkedListIterator {
 		private SingleLink ref;
 		private LinkedListIterator(SingleLink link){
 			this.ref = link;
