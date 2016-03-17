@@ -29,7 +29,7 @@ public class SingleLink {
 	*	@param	i	Set's link value by int
 	*/
 	public SingleLink(int i){
-		this.value = i;
+		this.value = new Integer(i);
 		this.nextLink = null;
 	}
 	
@@ -60,7 +60,7 @@ public class SingleLink {
 	*	@param	link	Sets SingleLink's link reference
 	*/
 	public SingleLink(int i, SingleLink link){
-		this.value = i;
+		this.value = new Integer(i);
 		this.nextLink = link;
 	}
 

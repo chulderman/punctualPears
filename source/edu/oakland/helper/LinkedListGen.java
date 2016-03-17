@@ -22,21 +22,24 @@ public class LinkedListGen{
 	}
 
 	public boolean isEmpty(){
-		return (this.currentLink = null);
+		return (this.currentLink == null);
 	}
 	public LinkedListIterator listIterator(){
 		LinkedListIterator iter = new LinkedListIterator(this.currentLink);
 		return iter;
 	}
-	public void insertLink(Integer n, SingleLink link){
-		SingleLink newLink = new SingleLink(n, link);
+	public void insertLink(Integer n) {
+		SingleLink newLink = new SingleLink(n);
 		newLink.setNext(currentLink);
 		this.currentLink = newLink;
 		return;
 	}	
 	public LinkedListGen createList(ArrayListGen integerArray){
 		LinkedListGen newList = new LinkedListGen();
-		// Fill linked list with the integer array //
+		ArrayListIterator iter = new newList.listIterator();
+		while(iter.hasNext()){
+			newList.insertLink(iter.next());	
+		}
 		return newList;
 	}
 
@@ -50,12 +53,13 @@ public class LinkedListGen{
 			return (ref != null);
 		}
 		public Integer next(){
-			if(ref.getNext() == null) {
-				return null;
-			}
 			Integer value = ref.getValue();
-			this.ref = ref.getNext();
-			return value;
+			try {
+				this.ref = ref.getNext();
+			}catch (NullPointerException e){
+				System.out.println("End of List");	
+			}
+			return value; 
 		}
 	}
 }

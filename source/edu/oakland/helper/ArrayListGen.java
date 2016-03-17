@@ -1,4 +1,4 @@
-package edu.oakland.helper
+package edu.oakland.helper;
 
 /**
 *	This class is responsible for generating an ArrayList of
