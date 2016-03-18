@@ -15,8 +15,8 @@ import java.util.*;
 public class JCFIteratorDemo {
 	
 	private int[] arrayRef;
-	private ArrayList<Integer> arrayListRef;
-	private LinkedList<SingleLink> linkListRef;
+	private ArrayListGen arrayListRef;
+	private LinkedListGen linkListRef;
 	
 	public JCFIteratorDemo(){
 	
@@ -26,11 +26,11 @@ public class JCFIteratorDemo {
 			ArrayGen aGen = new ArrayGen();
 			arrayRef = aGen.createArray();
 			
-			ArrayListGen<Integer> aListGen = new ArrayListGen<Integer>();
+			ArrayListGen aListGen = new ArrayListGen();
 			arrayListRef = aListGen.createArrayList(arrayRef);
 			
-			LinkedListGen<Integer> LLGen = new LinkedListGen<Integer>();
-			linkListRef = LLGen.createSingleLinkedList(arrayListRef);
+			LinkedListGen llGen = new LinkedListGen();
+			linkListRef = llGen.createList(arrayListRef);
 			
 			//Next create an AL<integer> iterator and find
 			//all odd numbers and print to cmd line
