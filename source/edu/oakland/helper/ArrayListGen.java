@@ -15,7 +15,6 @@ public class ArrayListGen {
 	private Integer[] arr;
 	private int size;
 	
-	
 	/**
 	*	Contructs an empty list with a given initial size.
 	*
@@ -45,7 +44,6 @@ public class ArrayListGen {
 			this.add(givenArray[i]);
 		
 		return this;
-		
 	}
 	
 	/**
@@ -106,31 +104,6 @@ public class ArrayListGen {
 		ArrayListIterator iter = new ArrayListIterator(this.arr, this.size);
 		return iter;
 	}
-	
-	public static void main(String[] args){
-		ArrayListGen yo = new ArrayListGen(5);
-		ArrayListGen hi;
-		int[] arr = new int[10];
-		for(int i = 0; i<10;i++)
-			arr[i] = 2*i;
-		
-		hi = yo.populateArrayList(arr);
-		
-		Iterator<Integer> iter = hi.listIterator();
-		while(iter.hasNext()){
-			System.out.println(iter.next());
-		}
-		
-		System.out.println("Set 200 to 0th index: " + hi.set(0, 200));
-		
-		Iterator<Integer> iter2 = hi.listIterator();
-		while(iter2.hasNext()){
-			System.out.println(iter2.next());
-		}
-		
-		System.out.println("get index 5: " + hi.get(5));
-	}
-	
 	
 	/**
 	*	This inner class provides an iterator for the ArrayListGen class
