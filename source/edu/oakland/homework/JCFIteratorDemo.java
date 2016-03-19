@@ -22,12 +22,68 @@ public class JCFIteratorDemo {
 	
 	}
 	
+	/**
+	*	Sets the arrayRef to point to the given int array.
+	*
+	*	@param arr given array of integers.
+	*/
+	public void setArrayRef(int[] arr){
+		arrayRef = arr;
+	}
+	
+	/**
+	*	Sets the arrayListRef to point to the given ArrayListGen.
+	*
+	*	@param arrList given arrayListGen.
+	*/
+	public void setArrayListRef(ArrayListGen arrList){
+		arrayListRef = arrList;
+	}
+	
+	/**
+	*	Sets the linkListRef to point to the given LinkedListGen.
+	*
+	*	@param linkList given LinkedListGen.
+	*/
+	public void setLinkListRef(LinkedListGen linkList){
+		linkListRef = linkList;
+	}
+	
+	/**
+	*	Gets the arrayRef.
+	*
+	*	@return arrayRef
+	*/
+	public int[] getArrayRef(){
+		return arrayRef;
+	}
+	
+	/**
+	*	Gets the arrayListRef.
+	*
+	*	@return arrayListRef
+	*/
+	public ArrayListGen getArrayListRef(){
+		return arrayListRef;
+	}
+	
+	/**
+	*	Gets the linkListRef.
+	*
+	*	@return linkListRef
+	*/
+	public LinkedListGen getLinkListRef(){
+		return linkListRef;
+	}
+	
 	public static void main(String[] args) {
+			JCFIteratorDemo manager = new JCFIteratorDemo();
+			
 			ArrayGen aGen = new ArrayGen();
 			arrayRef = aGen.createArray();
 			
 			ArrayListGen aListGen = new ArrayListGen();
-			arrayListRef = aListGen.createArrayList(arrayRef);
+			arrayListRef = aListGen.populateArrayList(arrayRef);
 			
 			LinkedListGen llGen = new LinkedListGen();
 			linkListRef = llGen.createList(arrayListRef);
