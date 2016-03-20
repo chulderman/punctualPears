@@ -78,6 +78,7 @@ public class JCFIteratorDemo {
 	
 	public static void main(String[] args) {
 			JCFIteratorDemo manager = new JCFIteratorDemo();
+			int tmp = 0;
 			
 			ArrayGen aGen = new ArrayGen(20);
 			manager.setArrayRef(aGen.createArray(20));
@@ -88,25 +89,25 @@ public class JCFIteratorDemo {
 			LinkedListGen llGen = new LinkedListGen();
 			manager.setLinkListRef(llGen.createList(manager.getArrayListRef()));
 			
+			
 			//Next create an AL<integer> iterator and find
 			//all odd numbers and print to cmd line
 			Iterator<Integer> iter1 = manager.getArrayListRef().listIterator();
-			int tmp = 0;
+			
 			while(iter1.hasNext()){
 				tmp = iter1.next();
 				if(tmp % 2 == 1)
 					System.out.println("Odd number found: " + tmp);
 			}
-			/**
+			
 			//construct an iterator for a singleLinkedList 
 			//and find all even numbers
 			Iterator<SingleLink> iter2 = manager.getLinkListRef().listIterator();
 			while(iter2.hasNext()){
 				tmp = iter2.next().getValue();
-				if(tmp % 2 == 1)
-					System.out.println("Odd number found: " + tmp);
+				if(tmp % 2 == 0)
+					System.out.println("Even number found: " + tmp);
 			}
-			*/
 			
 	}
 }

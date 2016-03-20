@@ -71,20 +71,31 @@ public class LinkedListGen{
 	
 	private class LinkedListIterator implements Iterator<SingleLink>{
 		private SingleLink ref;
+		private SingleLink currLink = null;
 
 		private LinkedListIterator(SingleLink link){
 			this.ref = link;
 		}
 		public boolean hasNext(){
-			return (ref != null);
+			if(currLink == null)
+				return true;
+			else if(currLink.getNext() == null)
+				return false;
+			else
+				return true;
 		}
 		public SingleLink next(){
-			try {
-				this.ref = ref.getNext();
-			}catch (NullPointerException e){
-				System.out.println("End of List");	
+			if(ref.getNext() == null){
+				throw new NoSuchElementException();
+			}else if(currLink == null){
+				this.currLink = ref;
+				return currLink;
+			}else if(currLink.getNext() == null){
+				return currLink;
 			}
-			return ref; 
+			
+			currLink = currLink.getNext();
+			return currLink; 
 		}
 		
 		public void remove(){
