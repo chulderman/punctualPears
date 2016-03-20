@@ -1,5 +1,5 @@
 package edu.oakland.helper;
-
+import java.util.*;
 /**
 *	This class is responsible for generating the LinkedList<SingleLink> imlementation of
 *	SingleLinks including a list iterator for traversing.
@@ -60,7 +60,7 @@ public class LinkedListGen{
 	*/
 	public LinkedListGen createList(ArrayListGen integerArray){
 		LinkedListGen newList = new LinkedListGen();
-		ArrayListIterator iter = new integerArray.listIterator();
+		Iterator<Integer> iter = integerArray.listIterator();
 
 		while(iter.hasNext()){
 			newList.insertLink(iter.next());	
@@ -69,7 +69,7 @@ public class LinkedListGen{
 	}
 
 	
-	private class LinkedListIterator {
+	private class LinkedListIterator implements Iterator<SingleLink>{
 		private SingleLink ref;
 
 		private LinkedListIterator(SingleLink link){
@@ -78,14 +78,16 @@ public class LinkedListGen{
 		public boolean hasNext(){
 			return (ref != null);
 		}
-		public Integer next(){
-			Integer value = ref.getValue();
+		public SingleLink next(){
 			try {
 				this.ref = ref.getNext();
 			}catch (NullPointerException e){
 				System.out.println("End of List");	
 			}
-			return value; 
+			return ref; 
+		}
+		
+		public void remove(){
 		}
 	}
 }

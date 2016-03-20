@@ -97,7 +97,7 @@ public class JCFIteratorDemo {
 				if(tmp % 2 == 1)
 					System.out.println("Odd number found: " + tmp);
 			}
-			
+			/**
 			//construct an iterator for a singleLinkedList 
 			//and find all even numbers
 			Iterator<SingleLink> iter2 = manager.getLinkListRef().listIterator();
@@ -106,6 +106,7 @@ public class JCFIteratorDemo {
 				if(tmp % 2 == 1)
 					System.out.println("Odd number found: " + tmp);
 			}
+			*/
 			
 	}
 }
