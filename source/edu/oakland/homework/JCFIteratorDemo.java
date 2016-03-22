@@ -9,105 +9,71 @@ import java.util.*;
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0 - 160216
+*	@version version 2.0 - 160322
 *	@since version 1.0
 */
 public class JCFIteratorDemo {
 	
-	private int[] arrayRef;
-	private ArrayListGen arrayListRef;
-	private LinkedListGen linkListRef;
+	private int[] array;
+	private int arraySize;
+	private ArrayGen arrayGen;
+	private ArrayListGen aLGen;
+	private SingleLink sLink;
+	private LinkedListGen sLLGen;
+	private ArrayList<Integer> aList;
 	
 	public JCFIteratorDemo(){
 	
 	}
-	
+
 	/**
-	*	Sets the arrayRef to point to the given int array.
-	*
-	*	@param arr given array of integers.
+	*	Initializes all the instance variables of JCFIteratorDemo
 	*/
-	public void setArrayRef(int[] arr){
-		arrayRef = arr;
+	private void run() {
+		arraySize = 20;
+	
+		arrayGen = new ArrayGen(arraySize);
+		array = arrayGen.createArray();
+	
+		aLGen = new ArrayListGen(array);
+		aList = aLGen.createArrayList();
+		
+		sLink = new SingleLink(array);
+		sLLGen = sLink.createSLinkedList();
+	
 	}
 	
 	/**
-	*	Sets the arrayListRef to point to the given ArrayListGen.
-	*
-	*	@param arrList given arrayListGen.
+	*	Finds odd numbers contained in aList and prints them.
 	*/
-	public void setArrayListRef(ArrayListGen arrList){
-		arrayListRef = arrList;
-	}
-	
-	/**
-	*	Sets the linkListRef to point to the given LinkedListGen.
-	*
-	*	@param linkList given LinkedListGen.
-	*/
-	public void setLinkListRef(LinkedListGen linkList){
-		linkListRef = linkList;
-	}
-	
-	/**
-	*	Gets the arrayRef.
-	*
-	*	@return arrayRef
-	*/
-	public int[] getArrayRef(){
-		return arrayRef;
-	}
-	
-	/**
-	*	Gets the arrayListRef.
-	*
-	*	@return arrayListRef
-	*/
-	public ArrayListGen getArrayListRef(){
-		return arrayListRef;
-	}
-	
-	/**
-	*	Gets the linkListRef.
-	*
-	*	@return linkListRef
-	*/
-	public LinkedListGen getLinkListRef(){
-		return linkListRef;
-	}
-	
-	public static void main(String[] args) {
-			JCFIteratorDemo manager = new JCFIteratorDemo();
-			int tmp = 0;
-			
-			ArrayGen aGen = new ArrayGen(20);
-			manager.setArrayRef(aGen.createArray(20));
-			
-			ArrayListGen aListGen = new ArrayListGen();
-			manager.setArrayListRef(aListGen.populateArrayList(manager.getArrayRef()));
-			
-			LinkedListGen llGen = new LinkedListGen();
-			manager.setLinkListRef(llGen.createList(manager.getArrayListRef()));
-			
-			
-			//Next create an AL<integer> iterator and find
-			//all odd numbers and print to cmd line
-			Iterator<Integer> iter1 = manager.getArrayListRef().listIterator();
+	private void findOddNumbers(){
+		Iterator<Integer> iter1 = aList.iterator();
 			
 			while(iter1.hasNext()){
 				tmp = iter1.next();
 				if(tmp % 2 == 1)
 					System.out.println("Odd number found: " + tmp);
 			}
-			
-			//construct an iterator for a singleLinkedList 
-			//and find all even numbers
-			Iterator<SingleLink> iter2 = manager.getLinkListRef().listIterator();
+	}
+	
+	/**
+	*	Finds even numbers contained in sLLGen and prints them.
+	*/
+	private void findEvenNumbers(){
+		Iterator<SingleLink> iter2 = sLLGen.iterator();
 			while(iter2.hasNext()){
 				tmp = iter2.next().getValue();
 				if(tmp % 2 == 0)
 					System.out.println("Even number found: " + tmp);
 			}
-			
 	}
+	
+	
+	public static void main(String[] args){
+		JCFIteratorDemo manager = new JCFIteratorDemo();
+		manager.run();
+		manager.findOddNumbers();
+		manager.findEvenNumbers();
+	}
+	
 }
