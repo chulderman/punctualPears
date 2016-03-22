@@ -37,24 +37,4 @@ public class ArrayListGen {
 		
 		return arr;
 	}
-
-	public static void main(String[] args) {
-		int[] arr1 = new int[10];
-		for(int i = 0; i< 10; i++)
-			arr1[i] = (int)(20*Math.random()) + 5;
-		
-		ArrayListGen agen = new ArrayListGen(arr1);
-		
-		ArrayList<Integer> aList = agen.createArrayList();
-		
-		Iterator<Integer> iter1 = aList.iterator();
-		int tmp = 0;
-			while(iter1.hasNext()){
-				tmp = iter1.next();
-				if(tmp % 2 == 1)
-					System.out.println("Odd number found: " + tmp);
-			}
-		
-	}
-	
 }
