@@ -14,7 +14,7 @@ import java.util.*;
 */
 public class JCFIteratorDemo {
 	
-	private int[] array;
+	private int[] intArray;
 	private int arraySize;
 	private ArrayGen arrayGen;
 	private ArrayListGen aLGen;
@@ -33,13 +33,13 @@ public class JCFIteratorDemo {
 		arraySize = 20;
 	
 		arrayGen = new ArrayGen(arraySize);
-		array = arrayGen.createArray();
+		intArray = arrayGen.createArray();
 	
-		aLGen = new ArrayListGen(array);
+		aLGen = new ArrayListGen(intArray);
 		aList = aLGen.createArrayList();
 		
-		sLink = new SingleLink(array);
-		sLLGen = sLink.createSLinkedList();
+		sLink = new SingleLink();
+		sLLGen = sLink.createList(intArray);
 	
 	}
 	
@@ -55,7 +55,6 @@ public class JCFIteratorDemo {
 					System.out.println("Odd number found: " + tmp);
 			}
 	}
-	
 	/**
 	*	Finds even numbers contained in sLLGen and prints them.
 	*/
