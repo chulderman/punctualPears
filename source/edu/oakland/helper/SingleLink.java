@@ -2,11 +2,11 @@ package edu.oakland.helper;
 
 /**
 *	This class is responsible for generating Links to
-*	build the SinglyLinkedList<SingleLink> 
+*	build the LinkedListGen<SingleLink> 
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0.2
+*	@version version 1.0.3
 *	@since version 1.0.0
 */
 
@@ -128,4 +128,19 @@ public class SingleLink {
 		return this.value;
 	}
 	// End Accessors //
+
+	/**
+	*	createList() coverts the ArrayListGen values to LinkedListGen values.
+	*	
+	*	@param	intArray	Takes an int[] array
+	*	@return	newList		Returns a LinkedListGen with the elements of the ArrayListGen
+	*/
+	public LinkedListGen createList(int[] intArray){
+		LinkedListGen<SingleLink> newList = new LinkedListGen<SingleLink>();
+
+		for(int i : intArray){
+			newList.insertLink(new Integer(i));
+		}
+		return newList;
+	}
 }
