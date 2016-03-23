@@ -20,9 +20,9 @@ public class ArrayListGen {
 	*
 	*	@param initialSize the specified initial size assigned to size
 	*/
-	public ArrayListGen(int[] integerArray){
-		intArray = integerArray;
-		arr = new ArrayList<Integer>();
+	public ArrayListGen(int[] intArray){
+		this.intArray = intArray;
+		this.arr = createArrayList(intArray);
 	}
 	
 	/**
@@ -31,10 +31,31 @@ public class ArrayListGen {
 	*	
 	*	@return Returns arr, an ArrayList<Integer>
 	*/
-	public ArrayList<Integer> createArrayList(){
-		for(int i =0; i<intArray.length; i++)
-			arr.add(intArray[i]);
-		
-		return arr;
+	private ArrayList<Integer> createArrayList(int[] intArray){
+		ArrayList<Integer> newArrayList = new ArrayList<Integer>();
+		for(int i : intArray){
+			newArrayList.add(intArray[i]);
+		}
+		return newArrayList;
+	}
+
+	//Public Accessors
+	public ArrayList<Integer> getArrayList(){
+		return this.arr;
+	}
+	public int[] getIntArray(){
+		return this.intArray;
+	}
+
+	//Public Mutators
+	public void setArrayList(int[] newIntArray){
+		this.intArray = newIntArray;
+		this.arr = createArrayList(newIntArray);
+	}
+	publi void setArrayList(ArrayList<Integer> newArrayList){
+		this.arr = newArrayList;
+	}
+	public void setIntArray(int[] newIntArray){
+		this.intArray = newIntArray;
 	}
 }
