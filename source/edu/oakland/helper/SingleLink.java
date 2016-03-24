@@ -135,8 +135,8 @@ public class SingleLink {
 	*	@param	intArray	Takes an int[] array
 	*	@return	newList		Returns a LinkedListGen with the elements of the ArrayListGen
 	*/
-	public LinkedListGen<SingleLink> createList(int[] intArray){
-		LinkedListGen<SingleLink> newList = new LinkedListGen<SingleLink>();
+	public LinkedListGen createList(int[] intArray){
+		LinkedListGen newList = new LinkedListGen();
 
 		for(int i : intArray){
 			newList.insertLink(new Integer(i));

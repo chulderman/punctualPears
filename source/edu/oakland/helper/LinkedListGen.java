@@ -10,7 +10,7 @@ import java.util.*;
 *	@since version 1.0.0
 */
 
-public class LinkedListGen<SingleLink>{
+public class LinkedListGen{
 
 	private SingleLink currentLink;
 
@@ -35,7 +35,7 @@ public class LinkedListGen<SingleLink>{
 	*	
 	*	@param	n	Takes an Integer and adds it to the list. 
 	*/
-	public LinkedListIterator listIterator(){
+	public LinkedListIterator iterator(){
 		LinkedListIterator iter = new LinkedListIterator(this.currentLink);
 		return iter;
 	}

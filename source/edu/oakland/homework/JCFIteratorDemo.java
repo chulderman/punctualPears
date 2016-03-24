@@ -33,10 +33,10 @@ public class JCFIteratorDemo {
 		arraySize = 20;
 	
 		arrayGen = new ArrayGen(arraySize);
-		intArray = arrayGen.createArray();
+		intArray = arrayGen.createArray(arraySize);
 	
 		aLGen = new ArrayListGen(intArray);
-		aList = aLGen.createArrayList();
+		aList = aLGen.getArrayList();
 		
 		sLink = new SingleLink();
 		sLLGen = sLink.createList(intArray);

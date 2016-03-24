@@ -52,7 +52,7 @@ public class ArrayListGen {
 		this.intArray = newIntArray;
 		this.arr = createArrayList(newIntArray);
 	}
-	publi void setArrayList(ArrayList<Integer> newArrayList){
+	public void setArrayList(ArrayList<Integer> newArrayList){
 		this.arr = newArrayList;
 	}
 	public void setIntArray(int[] newIntArray){
