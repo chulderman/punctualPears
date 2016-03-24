@@ -8,7 +8,7 @@ import java.util.*;
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 2.0 - 160322
+*	@version version 2.0 - 160324
 *	@since version 1.0
 */
 public class ArrayListGen {
@@ -16,9 +16,9 @@ public class ArrayListGen {
 	private int[] intArray;
 	
 	/**
-	*	Contructs an empty list with a given initial size.
+	*	Contructs an ArrayList using an int array.
 	*
-	*	@param initialSize the specified initial size assigned to size
+	*	@param intArray a seeding intArray
 	*/
 	public ArrayListGen(int[] intArray){
 		this.intArray = intArray;

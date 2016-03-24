@@ -9,7 +9,7 @@ import java.util.*;
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 2.0 - 160322
+*	@version version 2.0 - 160324
 *	@since version 1.0
 */
 public class JCFIteratorDemo {
@@ -33,7 +33,7 @@ public class JCFIteratorDemo {
 		arraySize = 20;
 	
 		arrayGen = new ArrayGen(arraySize);
-		intArray = arrayGen.createArray(arraySize);
+		intArray = arrayGen.getArray();
 	
 		aLGen = new ArrayListGen(intArray);
 		aList = aLGen.getArrayList();

@@ -1,12 +1,12 @@
 package edu.oakland.helper;
 import java.util.*;
 /**
-*	This class is a LinkedListGen<SingleLink> imlementation of
+*	This class is a LinkedListGen imlementation of
 *	the Linked List including a list iterator for traversing.
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0.4
+*	@version version 1.0.4 - 160324
 *	@since version 1.0.0
 */
 
@@ -31,9 +31,9 @@ public class LinkedListGen{
 	}
 
 	/**
-	*	insertLink() adds an Integer to the linked list.
+	*	iterator() creates an iterator for the LinkedListGen
 	*	
-	*	@param	n	Takes an Integer and adds it to the list. 
+	*	@return	iter	an iterator object for a LinkedListGen
 	*/
 	public LinkedListIterator iterator(){
 		LinkedListIterator iter = new LinkedListIterator(this.currentLink);

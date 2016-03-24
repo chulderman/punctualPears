@@ -2,11 +2,11 @@ package edu.oakland.helper;
 
 /**
 *	This class is responsible for generating Links to
-*	build the LinkedListGen<SingleLink> 
+*	build the LinkedListGen
 *
 *	@author Chase Hulderman
 *	@author Miguel Millan
-*	@version version 1.0.3
+*	@version version 1.0.3 - 160324
 *	@since version 1.0.0
 */
 
@@ -67,7 +67,7 @@ public class SingleLink {
 	/**
 	*	Class constructor
 	*
-	*	@param	i		Sets link value by Integer
+	*	@param	n		Sets link value by Integer
 	*	@param	link	Sets SingleLink's link reference
 	*/
 	public SingleLink(Integer n, SingleLink link){
