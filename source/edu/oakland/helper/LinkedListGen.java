@@ -54,11 +54,20 @@ public class LinkedListGen{
 	
 	private class LinkedListIterator implements Iterator<SingleLink>{
 		private SingleLink ref;
-		private SingleLink currLink = null;
+		private SingleLink currLink;
 
+		/**
+		*	Default class constructor - sets value to null and the current reference to the first link in the list.
+		*/
 		private LinkedListIterator(SingleLink link){
 			this.ref = link;
+			this.currLink = null;
 		}
+		/**
+		*	hasNext() indicates if there is a next link in the chain.
+		*	
+		*	@return		truth value for if the LinkedListGen iterator has any remaining links.
+		*/
 		public boolean hasNext(){
 			if(currLink == null)
 				return true;
@@ -67,6 +76,11 @@ public class LinkedListGen{
 			else
 				return true;
 		}
+		/**
+		*	next() returns the current link and iterates the iterator's link by one down the chain.
+		*	
+		*	@return	currLink	A SingleLink for the current link.
+		*/
 		public SingleLink next(){
 			if(ref.getNext() == null){
 				throw new NoSuchElementException();
@@ -80,7 +94,9 @@ public class LinkedListGen{
 			currLink = currLink.getNext();
 			return currLink; 
 		}
-		
+		/**
+		*	remove() stub method to fulfill Iterator<SingleLink> interface
+		*/
 		public void remove(){
 		}
 	}
