@@ -34,7 +34,7 @@ public class ArrayListGen {
 	private ArrayList<Integer> createArrayList(int[] intArray){
 		ArrayList<Integer> newArrayList = new ArrayList<Integer>();
 		for(int i : intArray){
-			newArrayList.add(intArray[i]);
+			newArrayList.add(i);
 		}
 		return newArrayList;
 	}
