@@ -48,7 +48,7 @@ public class JCFIteratorDemo {
 	*/
 	private void findOddNumbers(){
 		Iterator<Integer> iter1 = aList.iterator();
-			
+			int tmp = 0;
 			while(iter1.hasNext()){
 				tmp = iter1.next();
 				if(tmp % 2 == 1)
@@ -61,6 +61,7 @@ public class JCFIteratorDemo {
 	*/
 	private void findEvenNumbers(){
 		Iterator<SingleLink> iter2 = sLLGen.iterator();
+			int tmp = 0;
 			while(iter2.hasNext()){
 				tmp = iter2.next().getValue();
 				if(tmp % 2 == 0)
